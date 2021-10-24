@@ -1,0 +1,26 @@
+<!--  base.html  -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Meta Data -->
+  {% include 'base/meta.html' %}
+  <!-- Style Sheets -->
+  {% include 'base/styles.html' %}
+</head>
+
+<body class="h-100 w-100 p-3 mh-100 mw-100">
+  <!-- Nav bar -->
+  {% include 'base/nav.html' %}
+
+    {% block content %}
+    <!-- Content goes here -->
+    {% endblock %}
+
+  <!-- Scripts -->
+  {% include 'base/scripts.html' %}
+  <!-- Footer Bar -->
+  {% include 'base/footer.html' %}
+</body>
+
+</html>

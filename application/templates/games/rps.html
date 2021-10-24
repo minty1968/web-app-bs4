@@ -1,0 +1,89 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <h1 class="text-info text-center"><strong>Rock Paper Scissors</strong></h1>
+  <div class="container-fluid" style="min-height:100%">
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-warning alert-dismissible" role="alert">
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+      {{ message }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+  </div>
+</div>
+
+<div class="row">
+  <div class="col" id="play_total">
+    <div class="card-body text-center">
+      <h1 class="text-info">PLAYER 1</h1>
+      <h2></h2>
+      <h2></h2>
+      <h1 class="text-info">{{ play_total }}</h1>
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+
+  <div class="col" id="tie_total">
+    <div class="card-body text-center">
+      <h1 class="text-info">TIE</h1>
+      <h2></h2>
+      <h2></h2>
+      <h1 class="text-info">{{ tie }}</h1>
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+
+  <div class="col" id="comp_total">
+    <div class="card-body text-center">
+      <h1 class="text-info">COMPUTER</h1>
+      <h2></h2>
+      <h2></h2>
+      <h1 class="text-info">{{ comp_total }}</h1>
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+</div>  <!-- End class="row" -->
+
+
+<div class="row">
+  <div class="col">
+    <div class="card-body">
+      <form action="{{ url_for('games.rps') }}" method="POST">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+
+        ##########
+        ## Need to hide this container on post, and make it visible again on get
+        ##########
+        <div class="container" id="rps-cont">
+          <input class="btn btn-info" type="image" style="width:30%" name="players_choice" value='1' img src="{{url_for('static', filename='images/games/rock.jpg')}}" alt="Rock" style="width:30%">
+          <input class="btn btn-info" type="image" style="width:30%" name="players_choice" value='2' img src="{{url_for('static', filename='images/games/paper.jpg')}}" alt="Paper" style="width:30%">
+          <input class="btn btn-info" type="image" style="width:30%" name="players_choice" value='3' img src="{{url_for('static', filename='images/games/scissors.jpg')}}" alt="Scissors" style="width:30%">
+        </div>  <!-- End  class="w3-container"  -->
+      </form>
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+
+  <div class="col">
+    <div class="card-body">
+      <div class="container">
+        <h2 class="text-info">{{ winner }}</h2>
+      </div>  <!-- End class="container" -->
+      <div class="container text-info">
+        <form action="{{ url_for('games.gamesIndex') }}">
+          <input class="btn btn-info" type="submit" value="Quit" style="font-size:40px; width:50%; height:100px" alt="Submit">
+        </form>
+      </div>  <!-- End class="container" -->
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+
+  <div class="col" id="computer">
+    <img src="{{ computer1 }}" alt="Rock Paper Scissors" style="width:30%">
+  </div>  <!-- End class="col" -->
+</div> <!-- End class="row" -->
+
+{% endblock %}

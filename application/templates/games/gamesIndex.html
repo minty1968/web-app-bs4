@@ -1,0 +1,60 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <h1 class="text-center text-info">Games Area</h1>
+</div>
+
+<div class="row p-5">
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-header text-info"><h3>Rock Paper Scissors</h3></div><!-- End  class="card-header"  -->
+      <div class="card-body">
+        <p><img src="/static/images/games/rock_paper_scissors.png" class="rounded" alt="rock paper scissors"></p>
+      </div> <!-- End  class="card-body"  -->
+      <div class="card-footer">
+        <a href="{{ url_for('games.rps') }}" class="btn btn-info btn-lg" role="button" aria-pressed="true">Play</a>
+      </div> <!-- End  class="card-footer"  -->
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-header text-info"><h3>Game 2</h3></div><!-- End  class="card-header"  -->
+      <div class="card-body">
+        <p>Place image here</p>
+      </div> <!-- End  class="card-body"  -->
+      <div class="card-footer">
+        <button class="btn m-3 text-info" id="game2">Play A Game</button>
+      </div> <!-- End  class="card-Footer"  -->
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+</div>
+
+<div class="row p-5">
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-header text-info"><h3>Game 3</h3></div><!-- End  class="card-header"  -->
+      <div class="card-body">
+        <p>Place image here</p>
+      </div> <!-- End  class="card-body"  -->
+      <div class="card-footer">
+        <button class="btn m-3 text-info" id="Game3">Play a Game</button>
+      </div> <!-- End  class="card-footer"  -->
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-header text-info"><h3>Game 4</h3></div><!-- End  class="card-header"  -->
+      <div class="card-body">
+        <p>Place image here</p>
+      </div> <!-- End  class="card-body"  -->
+      <div class="card-footer">
+        <button class="btn m-3 text-info" id="Game4">Play A Game</button>
+      </div> <!-- End  class="card-footer"  -->
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+</div>
+{% endblock %}

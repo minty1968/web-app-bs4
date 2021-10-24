@@ -1,0 +1,34 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+<div class="container-sm text-center">
+    <h2>Password Generator</h2>
+
+	<div class="card">
+		<div class="card-header">
+  		    <h1><span class="result text-info"></span></h1>
+	    </div>
+
+	    <div class="card-body">
+			<p><label>Password length</label>
+			<input type="number" class="length" min='12' max='40' value='20' /></p>
+			<br>
+  			<label>Include uppercase letters</label>
+  			<input type="checkbox" class="uppercase" checked />
+            <br> 		
+  			<label>Include lowercase letters</label>
+  			<input type="checkbox" class="lowercase" checked />
+			<br>
+  			<label>Include numbers</label>
+  			<input type="checkbox" class="numbers" checked />
+			<br>
+  			<label>Include symbols</label>
+  			<input type="checkbox" class="symbols" checked />
+  		</div>
+  	</div>
+	<div class="card-footer">
+    	<button class="btn m-3 text-info" id="generate">Generate password</button>
+        <button class="btn m-3 text-info" id="clipboard">Copy Password</button>
+	</div>
+</div>
+{% endblock %}

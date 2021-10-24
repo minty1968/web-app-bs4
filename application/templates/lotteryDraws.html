@@ -1,0 +1,89 @@
+{% extends "base/base.html" %}
+
+{% block content %}
+
+<div class="container">
+  <h1 class="text-center text-info">Lottery Draw Area</h1>
+</div>
+
+<div class="row p-5">
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-header text-info"><h3>National Lottery</h3></div><!-- End  class="card-header"  -->
+      <div class="card-body">
+        <h3>
+        {% for num in lotto_nums %}
+          <span class="badge badge-danger">{{ num }}</span>
+        {% endfor %}
+        </h3>
+      </div> <!-- End  class="card-body"  -->
+      <div class="card-footer">
+          <small> No guarantees these numbers will win any prize, 
+                  but feel free to try them on the next draw.</small>
+      </div> <!-- End  class="card-footer"  -->
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-header text-info"><h3>Euro Millions</h3></div><!-- End  class="card-header"  -->
+      <div class="card-body">
+        <h3>
+        {% for num in euro_nums %}
+          <span class="badge badge-danger">{{ num }}</span>
+        {% endfor %}
+        {% for bonus in euro_bonus %}
+            <span class="badge badge-warning">{{ bonus }}</span>
+        {% endfor %}
+        </h3>
+      </div> <!-- End  class="card-body"  -->
+      <div class="card-footer">
+          <small> No guarantees these numbers will win any prize, 
+                  but feel free to try them on the next draw.</small>
+      </div> <!-- End  class="card-footer"  -->
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+</div>
+
+<div class="row p-5">
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-header text-info"><h3>Set for Life</h3></div><!-- End  class="card-header"  -->
+      <div class="card-body">
+        <h3>
+        {% for num in s4l_nums %}
+          <span class="badge badge-danger">{{ num }}</span>
+        {% endfor %}
+        {% for bonus in s4l_bonus %}
+        <span class="badge badge-warning">{{ bonus }}</span>
+        {% endfor %}
+        </h3>
+      </div> <!-- End  class="card-body"  -->
+      <div class="card-footer">
+          <small> No guarantees these numbers will win any prize,
+                  but feel free to try them on the next draw.</small>
+      </div> <!-- End  class="card-footer"  -->
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+
+  <div class="col">
+    <div class="card text-center">
+      <div class="card-header text-info"><h3>Thunderball</h3></div><!-- End  class="card-header"  -->
+      <div class="card-body">
+        <h3>
+        {% for num in thunderball_nums %}
+          <span class="badge badge-danger">{{ num }}</span>
+        {% endfor %}
+        {% for bonus in thunderball_bonus %}
+        <span class="badge badge-warning">{{ bonus }}</span>
+        {% endfor %}
+        </h3>
+      </div> <!-- End  class="card-body"  -->
+      <div class="card-footer">
+          <small> No guarantees these numbers will win any prize,
+                  but feel free to try them on the next draw.</small>
+      </div> <!-- End  class="card-footer"  -->
+    </div>  <!-- End class="card" -->
+  </div>  <!-- End class="col"  -->
+</div>
+{% endblock %}
